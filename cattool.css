@@ -1,0 +1,224 @@
+/*body {
+  background-color: #E9ECEF !important;
+}*/
+
+body {
+  background-image: url("images/ww circle logo - white.png") !important;
+  background-repeat: no-repeat;
+  background-size: auto 25%;
+  background-position: right bottom;
+  background-attachment: fixed;
+  background-color: #FF0000 !important;
+  padding-top: 5%;
+}
+
+.container-fluid {
+  background-color:rgba(233, 236, 239, 0.6);
+  border-radius: 10px;
+  padding-top: 25px;
+  /*-webkit-box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);*/
+  animation: zoomIn 500ms;
+  font-weight: 450;
+  max-width: 90%;
+}
+
+#leftcolumn, #rightcolumn {
+  text-align: center;  
+  border-radius: 5px;
+  height: auto;
+  color: #212529;
+  font-weight: bold;
+}
+
+#leftcolumn textarea, #rightcolumn textarea {
+  margin: 0 auto;
+  max-width: 50%;
+}
+
+#bookId {
+  height: 40px;
+}
+
+#leftcolumn .form-control, #rightcolumn .form-control {
+  padding: .375rem .75rem;
+  font-weight: 400;
+}
+
+#leftcolumn {
+  animation: flipInX 1s;
+}
+
+#leftcolumn > fieldset > div.input-group.mb-3.col-md-6, #rightcolumn > fieldset > div.input-group.mb-3.col-md-6 {
+  margin: 0 auto;
+}
+
+#leftcolumn p {
+  padding-top: 50px;
+}
+
+#rightcolumn {
+  animation: flipInX 1.5s;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.mainHeader {
+  padding-bottom: 5px;
+}
+
+#basic-addon1 > label {
+  margin-bottom: 0 !important;
+}
+
+.geoselect {
+  margin: 0 auto;
+}
+
+.catCheck {
+  animation: zoomIn 2s;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.form-check-label {
+  padding-left: 0 !important;
+}
+
+.mulziplabel {
+  max-width: 75%;
+}
+
+.form-inline {
+  display: inline-block;
+}
+
+#mulcategory {
+  margin-bottom: 50px;
+}
+
+.results {
+  margin-top: 25px;
+}
+
+#territory {
+  margin: 9px auto 65px;
+}
+
+.grad {
+  background: linear-gradient(to top, rgba(255,0,0,0), rgba(233, 236, 239, 0.6));
+}
+
+#category {
+  margin-bottom: 5px;
+}
+
+#city, .ziplabel {
+  margin-bottom: 26px;
+}
+
+hr.style2 {
+  border-top: 3px double #212529;
+}
+
+hr {
+  border-top: 1px dashed #212529;
+}
+
+.btn-outline-danger {
+  font-weight: bold !important;
+}
+
+.vl {
+  border-left: 4px solid #FF0000;
+  height: 500px;
+  position: absolute;
+  right: 100%;
+}
+
+
+@media (max-width: 1024px) {
+  #rightcolumn > fieldset > div.input-group.mb-3.col-md-6 {
+    max-width: initial;
+  }
+
+  #territory {
+    margin-bottom: 89px;
+  }
+
+  .geoselect {
+    margin: 0 auto 6px;
+  }
+
+
+  #rightcolumn > fieldset > p {
+    margin-bottom: 1em;
+  }
+
+@media (max-width: 768px) {
+  body {
+    background-position: center;
+  }
+
+  #leftcolumn {
+    animation: fadeInDown 2s !important;
+  }
+  
+  #rightcolumn {
+    animation: fadeInDown 3s !important;
+  }
+
+  label {
+    display: initial;
+  }
+
+  .container-fluid {
+    background-color:rgba(233,236,239,.50);
+    text-align: center;
+    animation: none !important;
+  }
+
+  .catCheck {
+    animation: zoomIn 2s;
+    max-width: initial;
+    margin: 0 auto;
+  }
+
+  .geoselect {
+    margin: 10px 0 10px;
+  }
+
+  #territory {
+    margin-bottom: 20px;
+  }
+
+  #city, .ziplabel {
+    margin-bottom: 10px;
+  }
+
+  #zipcode {
+    font-weight: 300 !important;
+  }
+
+  input[type=text] {
+    height: 36px;
+  }
+
+  #leftcolumn > fieldset > p {
+    padding-top: 25px;
+  }
+
+  #rightcolumn > fieldset > p {
+    margin: 50px 0 50px 0;
+  }
+  
+  #leftcolumn textarea, #rightcolumn textarea {
+    margin: 0 auto;
+    max-width: initial;
+  }
+}
+}

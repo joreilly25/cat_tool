@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="cattool.css">
+  <link rel="stylesheet" href="css/shards/shards.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <title>Category Availability</title>
+</head>
+<body>
+  <div class="container-fluid">
+  <h1 class="mainHeader">Category Availability</h1>
+  <hr class="style2">
+  <!--<p>To search for a specific territory or book, please see Method #1.</p>
+  <p>For Method #2, first select the State, and then County or City. To search for specific zip codes, check the box, and enter them below.</p>
+  -->
+  <div class="row">
+    <div class="col-md-6">
+        <div class="col-md-12">
+      <div id="leftcolumn" class="form-group">
+        <fieldset>
+          <legend>Method 1</legend>
+          <h4>By Territory or Book #</h4>
+          <hr>
+          <div class="input-group mb-3 col-md-6">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><label for="bookId">Enter Books:</label></span>
+              </div>
+              <input type="text" class="form-control" name="bookId" id="bookId" value="" placeholder="AC3" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+         <!-- <label for="bookId">Enter Books:</label>
+          <div class="form-inline">
+          <input class="form-control" type="text" name="bookId" id="bookId" value="">
+        </div> -->
+        <p>OR</p>
+          <br>
+          <select class="form-control col-md-6" name="territory" id="territory">
+            <option value="">-- Select Territory --</option>
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+          </select>
+          <input class="form-check-input" type="checkbox" name="mulbookId1" id="mulbookId1" onclick="mulsearch(this,'bookId')">
+          <label class="form-check-label" for="mulbookId1">Enter Book #s (separated by commas)</label>
+          <div id="bookIdSearchResult" class="ui-widget-content"></div>
+          <div id="mulbookIdSearchResult">
+            <textarea class="form-control" name="mulbookId" id="mulbookId" disabled=""></textarea>
+          </div>
+        </fieldset>
+      </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+        <!-- <div class="vl"></div> -->
+      <div class="col-md-12">
+        <div id="rightcolumn" class="form-group">
+        <fieldset>
+          <legend>Method 2</legend>
+          <h4 class="method2" data-toggle="tooltip" data-placement="top" title="First select the State, and then County or City. To search for specific zip codes, check the box, and enter zip codes in box below.">By Geography <i class="fas fa-question-circle"></i></h4>
+          <hr>
+          <select class="form-control col-md-6 geoselect" onchange="fillcountycity(this)" name="state" id="state">
+            <option value="">- State -</option>
+          </select>
+          <select class="form-control col-md-6 geoselect" name="county" id="county">
+            <option value="">- County -</option>
+          </select>
+          <select class="form-control col-md-6 geoselect" name="city" id="city">
+            <option value="">- City -</option>
+          </select>
+          <p>OR</p>
+          <div class="input-group mb-3 col-md-6">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><label for="zipcode">Enter Zip Codes:</label></span>
+              </div>
+              <input type="text" class="form-control" placeholder="95458" pattern="[0-9]{5}" title="Five digit zip code" name="zipcode" id="zipcode" value="" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          <!-- <label for="zipcode" class="ziplabel">enter Zip Codes:</label>
+          <div class="form-inline">
+          <input class="form-control" type="text" pattern="[0-9]{5}" title="Five digit zip code" name="zipcode" id="zipcode" value="" />
+          </div> -->
+          <br>
+          <br>
+          <input class="form-check-input" type="checkbox" name="mulzipcode1" id="mulzipcode1" onclick="mulsearch(this,'zipcode')">
+          <label class="form-check-label mulziplabel" for="mulzipcode1">Enter Multiple Zip Codes (separated by commas)</label>
+          <div id="zipcodeSearchResult"></div>
+          <div id="mulzipcodeSearchResult">
+            <textarea class="form-control" name="mulzipcode" id="mulzipcode" disabled=""></textarea>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    </div>
+  </div>
+<hr>
+<div class="catCheck">
+  <label for="category"><h5>Type in Category Name to Check:</h5></label>
+  <input class="form-control col-md-6" type="text" name="category" id="category">
+  <textarea readonly class="form-control" name="mulcategory" id="mulcategory"></textarea>
+  </div>
+  <button type="button" class="btn btn-danger">Search</button>
+  <button type="button" class="btn btn-danger">Export</button>
+  <button type="button" class="btn btn-outline-danger">Reset</button>
+  <h4 class="results">Search Result</h4>
+  <hr>
+  <table class="table table-striped table-responsive-md">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Book ID</th>
+        <th scope="col">MAD</th>
+        <th scope="col">Available?</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">Book Status</th>
+        <th scope="col">Territory</th>
+        <th scope="col">Category</th>
+        <th scope="col">Category Number</th>
+        <th scope="col">RSD</th>
+        <th scope="col">CME</th>
+      </tr>
+    </thead>
+    </table>
+</div>
+  <!-- Optional JavaScript -->
+    <!-- JavaScript Dependencies: jQuery, Popper.js, Bootstrap JS, Shards JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="js/shards/shards.min.js"></script>
+    <script>
+      $('#mulbookId1').change(function(){ $("#mulbookId").prop("disabled", !$(this).is(':checked')); });
+      $('#mulzipcode1').change(function(){ $("#mulzipcode").prop("disabled", !$(this).is(':checked')); });
+      $(function () { $('[data-toggle="tooltip"]').tooltip() })
+    </script>
+</body>
+</html>
