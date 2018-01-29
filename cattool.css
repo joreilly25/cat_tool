@@ -19,7 +19,6 @@ body {
   /*-webkit-box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);
   box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.75);*/
-  animation: zoomIn 500ms;
   font-weight: 450;
   max-width: 90%;
 }
@@ -46,20 +45,12 @@ body {
   font-weight: 400;
 }
 
-#leftcolumn {
-  animation: flipInX 1s;
-}
-
 #leftcolumn > fieldset > div.input-group.mb-3.col-md-6, #rightcolumn > fieldset > div.input-group.mb-3.col-md-6 {
   margin: 0 auto;
 }
 
 #leftcolumn p {
   padding-top: 50px;
-}
-
-#rightcolumn {
-  animation: flipInX 1.5s;
 }
 
 textarea {
@@ -80,7 +71,6 @@ textarea {
 }
 
 .catCheck {
-  animation: zoomIn 2s;
   max-width: 50%;
   margin: 0 auto;
 }
@@ -182,15 +172,8 @@ hr {
 
 @media (max-width: 767px) {
   body {
-    background-position: center;
-  }
-
-  #leftcolumn {
-    animation: fadeInDown 2s !important;
-  }
-  
-  #rightcolumn {
-    animation: fadeInDown 3s !important;
+    background-position: center top;
+    background-position-y: 200px;
   }
 
   label {
@@ -200,11 +183,9 @@ hr {
   .container-fluid {
     background-color:rgba(233,236,239,.50);
     text-align: center;
-    animation: none !important;
   }
 
   .catCheck {
-    animation: zoomIn 2s;
     max-width: initial;
     margin: 0 auto;
   }
