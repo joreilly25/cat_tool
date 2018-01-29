@@ -17,18 +17,21 @@
 <body>
   <div class="container-fluid">
   <h1 class="mainHeader">Category Availability</h1>
+  <p>Please choose a method below:</p>
+  <h5 id="method1toggle" class="methodactive">Method 1 (By Territory or Book #)</h5>
+  <br>
+  <h5 id="method2toggle">Method 2 (By Geography)</h5>
   <hr class="style2">
   <!--<p>To search for a specific territory or book, please see Method #1.</p>
   <p>For Method #2, first select the State, and then County or City. To search for specific zip codes, check the box, and enter them below.</p>
   -->
   <div class="row">
-    <div class="col-md-6">
-        <div class="col-md-12">
+    <div class="col">
+        <div class="col">
       <div id="leftcolumn" class="form-group">
         <fieldset>
           <legend>Method 1</legend>
           <h4>By Territory or Book #</h4>
-          <hr>
           <div class="input-group mb-3 col-md-6">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><label for="bookId">Enter Books:</label></span>
@@ -57,14 +60,13 @@
       </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
         <!-- <div class="vl"></div> -->
-      <div class="col-md-12">
+      <div class="col">
         <div id="rightcolumn" class="form-group">
         <fieldset>
           <legend>Method 2</legend>
-          <h4 class="method2" data-toggle="tooltip" data-placement="top" title="First select the State, and then County or City. To search for specific zip codes, check the box, and enter zip codes in box below.">By Geography <i class="fas fa-question-circle"></i></h4>
-          <hr>
+          <h4 class="method2" data-toggle="tooltip" data-placement="right" title="First select the State, and then County or City. To search for specific zip codes, check the box, and enter zip codes in box below.">By Geography <i class="fas fa-question-circle"></i></h4>
           <select class="form-control col-md-6 geoselect" onchange="fillcountycity(this)" name="state" id="state">
             <option value="">- State -</option>
           </select>
@@ -136,6 +138,20 @@
       $('#mulbookId1').change(function(){ $("#mulbookId").prop("disabled", !$(this).is(':checked')); });
       $('#mulzipcode1').change(function(){ $("#mulzipcode").prop("disabled", !$(this).is(':checked')); });
       $(function () { $('[data-toggle="tooltip"]').tooltip() })
+      
+      $('#method1toggle').click(function(){
+        $('#leftcolumn').show();
+        $('#rightcolumn').hide();
+        $('#method1toggle').addClass("methodactive");
+        $('#method2toggle').removeClass("methodactive");
+      });
+
+      $('#method2toggle').click(function(){
+        $('#rightcolumn').show();
+        $('#leftcolumn').hide();
+        $('#method2toggle').addClass("methodactive");
+        $('#method1toggle').removeClass("methodactive");
+      });
     </script>
 </body>
 </html>

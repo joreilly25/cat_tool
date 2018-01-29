@@ -31,6 +31,40 @@ body {
   font-weight: bold;
 }
 
+.method2{
+  display: inline-block;
+}
+
+#rightcolumn {
+  display: none;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+#leftcolumn {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.methodactive {
+  border-bottom: 2px solid black;
+  content: "";
+}
+
+#method1toggle:hover, #method2toggle:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#method1toggle {
+  margin-top: initial;
+}
+
+#method1toggle, #method2toggle {
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
 #leftcolumn textarea, #rightcolumn textarea {
   margin: 0 auto;
   max-width: 50%;
@@ -171,6 +205,10 @@ hr {
     background-position: center top;
     background-position-y: 200px;
     background-size: 25%;
+  }
+
+  #leftcolumn, #rightcolumn {
+    max-width: 100%;
   }
 
   input[type="checkbox"] {
