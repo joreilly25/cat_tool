@@ -29,7 +29,7 @@
           <legend>Method 1</legend>
           <h4>By Territory or Book #</h4>
           <hr>
-          <div class="input-group mb-3 col">
+          <div class="input-group mb-3 col-md-6">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><label for="bookId">Enter Books:</label></span>
               </div>
@@ -41,7 +41,7 @@
         </div> -->
         <p>OR</p>
           <br>
-          <select class="form-control col" name="territory" id="territory">
+          <select class="form-control col-md-6" name="territory" id="territory">
             <option value="">-- Select Territory --</option>
             <option value="">1</option>
             <option value="">2</option>
@@ -65,13 +65,13 @@
           <legend>Method 2</legend>
           <h4 class="method2" data-toggle="tooltip" data-placement="top" title="First select the State, and then County or City. To search for specific zip codes, check the box, and enter zip codes in box below.">By Geography <i class="fas fa-question-circle"></i></h4>
           <hr>
-          <select class="form-control col geoselect" onchange="fillcountycity(this)" name="state" id="state">
+          <select class="form-control col-md-6 geoselect" onchange="fillcountycity(this)" name="state" id="state">
             <option value="">- State -</option>
           </select>
-          <select class="form-control col geoselect" name="county" id="county">
+          <select class="form-control col-md-6 geoselect" name="county" id="county">
             <option value="">- County -</option>
           </select>
-          <select class="form-control col geoselect" name="city" id="city">
+          <select class="form-control col-md-6 geoselect" name="city" id="city">
             <option value="">- City -</option>
           </select>
           <p>OR</p>
