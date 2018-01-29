@@ -141,7 +141,7 @@ hr {
 }
 
 
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   #rightcolumn > fieldset > div.input-group.mb-3.col-md-6 {
     max-width: initial;
   }
@@ -154,12 +154,33 @@ hr {
     margin: 0 auto 6px;
   }
 
+  #leftcolumn > fieldset > div.input-group.mb-3.col-md-6 {
+    max-width: 100%;
+  }
+
+  .geoselect, #territory {
+    max-width: 100%;
+  }
+
+  .catCheck {
+    max-width: initial;
+  }
+
+  input[type=text] {
+    height: initial;
+  }
+
+  #leftcolumn textarea, #rightcolumn textarea {
+    max-width: initial;
+  }
+}
+
 
   #rightcolumn > fieldset > p {
     margin-bottom: 1em;
   }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   body {
     background-position: center;
   }
@@ -189,7 +210,7 @@ hr {
   }
 
   .geoselect {
-    margin: 10px 0 10px;
+    margin: 10px auto 10px;
   }
 
   #territory {
@@ -220,5 +241,4 @@ hr {
     margin: 0 auto;
     max-width: initial;
   }
-}
 }
