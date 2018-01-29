@@ -75,9 +75,8 @@ textarea {
   margin: 0 auto;
 }
 
-
-.mulziplabel {
-  max-width: 75%;
+.form-check-label {
+  padding-left: 0 !important;
 }
 
 .form-inline {
@@ -177,10 +176,6 @@ hr {
   input[type="checkbox"] {
     height: auto;
     width: auto;
-  }
-
-  label {
-    display: initial;
   }
 
   .container-fluid {
